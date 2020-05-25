@@ -26,6 +26,10 @@ html {
   @apply box-border text-white;
 }
 
+main {
+  @apply my-0 mx-auto pt-20;
+}
+
 section {
   @apply relative px-72;
 }
