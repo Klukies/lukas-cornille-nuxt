@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['./assets/css/tabs.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -41,7 +41,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/prismic'],
+  modules: ['nuxt-svg-loader', '@nuxtjs/prismic'],
 
   prismic: {
     endpoint: 'https://lukas-cornille.cdn.prismic.io/api/v2',
@@ -57,15 +57,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend: (config) => {
-      const svgRule = config.module.rules.find((rule) => rule.test.test('.svg'));
-
-      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
-
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: ['babel-loader', 'vue-svg-loader'],
-      });
+    extend: (config, ctx) => {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)|(\.svg$)/,
+        });
+      }
     },
   },
 };
