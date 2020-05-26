@@ -33,24 +33,56 @@ export default Vue.extend({
 
 <style scoped>
 .hero {
-  @apply flex items-center h-full z-10 bg-gray-900;
+  @apply flex z-10 bg-gray-900;
   height: 75vh;
 }
 
+.hero-info {
+  @apply self-center;
+}
+
+.hero-image {
+  @apply hidden w-auto;
+}
+
 h1 {
-  @apply text-7xl font-bold;
+  @apply text-4xl font-bold;
 }
 
 h2 {
-  @apply text-4xl mb-10;
+  @apply text-2xl mb-2;
+}
+
+@screen sm {
+  h1 {
+    @apply text-7xl font-bold;
+  }
+}
+
+@screen lg {
+  .hero {
+    @apply flex-row;
+  }
+
+  .hero-image {
+    @apply flex ml-auto;
+  }
+
+  .hero-info {
+    @apply self-center;
+  }
+
+  h1 {
+    @apply text-7xl font-bold;
+  }
+
+  h2 {
+    @apply text-4xl mb-10;
+  }
 }
 
 span {
   @apply text-orange-700;
-}
-
-.hero-image {
-  @apply flex h-full w-auto ml-auto;
 }
 
 picture {
@@ -59,7 +91,7 @@ picture {
 
 source,
 picture img {
-  @apply h-full w-auto bg-transparent object-cover;
+  @apply h-full w-auto bg-transparent object-cover mx-auto;
 }
 
 .spotlight {
