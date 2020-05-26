@@ -1,27 +1,37 @@
 <template>
   <header>
     <Brand />
+    <Hamburger @click="$emit('toggleMenu')" />
     <Navigation @openContactModal="$emit('openContactModal')" />
   </header>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Hamburger from './Hamburger.vue';
 import Navigation from './Navigation.vue';
 import Brand from './Brand.vue';
 
 export default Vue.extend({
-  components: { Brand, Navigation },
-  data() {
-    return {};
-  },
+  components: { Brand, Navigation, Hamburger },
 });
 </script>
 
 <style scoped>
 header {
-  @apply flex py-4 justify-between items-center bg-gray-900 fixed w-full z-50;
-  padding-left: 18rem;
-  padding-right: 18rem;
+  @apply fixed flex py-4 pl-4 justify-between items-center bg-gray-900 fixed w-full z-50;
+  padding-right: calc(100vw - 100%);
+}
+
+@screen md {
+  header {
+    @apply px-20;
+  }
+}
+
+@screen 2xl {
+  header {
+    @apply px-48;
+  }
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <nav>
     <nuxt-link to="/">Home</nuxt-link>
+    <nuxt-link to="/#about">About</nuxt-link>
     <nuxt-link to="/blog">Blog</nuxt-link>
     <LetsTalk @openContactModal="$emit('openContactModal')" />
   </nav>
@@ -20,10 +21,16 @@ export default Vue.extend({
 
 <style scoped>
 nav {
-  @apply text-lg font-bold;
+  @apply hidden text-lg font-bold;
 }
 
-.nuxt-link-active {
+@screen md {
+  nav {
+    @apply block;
+  }
+}
+
+.nuxt-link-exact-active {
   @apply text-orange-700;
 }
 

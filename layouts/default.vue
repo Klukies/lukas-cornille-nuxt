@@ -1,19 +1,29 @@
 <template>
   <div>
-    <Header @openContactModal="openContactModal" />
+    <Header @openContactModal="openContactModal" @toggleMenu="toggleMenu" />
+    <MobileMenu v-scroll-lock="isMenuActive" :is-active="isMenuActive" />
     <nuxt />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import MobileMenu from '../components/Header/MobileMenu.vue';
 import Header from '~/components/Header/Header.vue';
 
 export default Vue.extend({
-  components: { Header },
+  components: { Header, MobileMenu },
+  data() {
+    return {
+      isMenuActive: false,
+    };
+  },
   methods: {
     openContactModal() {
       console.log('opening');
+    },
+    toggleMenu() {
+      this.isMenuActive = !this.isMenuActive;
     },
   },
 });
@@ -31,12 +41,24 @@ main {
 }
 
 section {
-  @apply relative px-72;
+  @apply relative px-4;
 }
 
 *,
 *:before,
 *:after {
   @apply box-border m-0;
+}
+
+@screen md {
+  section {
+    @apply px-20;
+  }
+}
+
+@screen 2xl {
+  section {
+    @apply px-64;
+  }
 }
 </style>

@@ -22,6 +22,9 @@ module.exports = {
       padding: {
         '72': '18rem',
       },
+      screens: {
+        '2xl': '1500px',
+      },
     },
   },
   variants: {},

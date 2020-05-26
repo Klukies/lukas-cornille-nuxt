@@ -25,7 +25,8 @@
     "@nuxtjs/prismic": "^1.2.1",
     "ant-design-vue": "^1.6.0",
     "nuxt": "^2.0.0",
-    "nuxt-svg-loader": "^1.2.0"
+    "nuxt-svg-loader": "^1.2.0",
+    "v-scroll-lock": "^1.2.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
