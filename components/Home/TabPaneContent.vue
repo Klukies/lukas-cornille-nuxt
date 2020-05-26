@@ -19,4 +19,9 @@ export default Vue.extend({});
 .tab-content {
   @apply flex;
 }
+
+.tab-content-image,
+.tab-content-text {
+  @apply w-1/2 p-8;
+}
 </style>

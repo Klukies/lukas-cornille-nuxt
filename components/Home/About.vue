@@ -7,7 +7,19 @@
           <template v-slot:image>
             <img src="~/assets/images/about.png" />
           </template>
-          <template v-slot:text>some text</template>
+          <template v-slot:text>
+            <h3>A developer with passion for new technologies</h3>
+            <p>
+              My name is Lukas, and I love for everything web related. I've written applications in
+              several backend and frontend languages/frameworks during my time as a developer, but
+              my passion has only grown.
+            </p>
+            <p>
+              On this site, you can find information about me and read some blogposts related to web
+              and developer related activities.
+            </p>
+            <p>Got any questions or want to have a chat? Be sure to contact me!</p>
+          </template>
         </TabPaneContent>
       </TabPane>
       <TabPane key="2" tab="Skills">
@@ -41,7 +53,7 @@
 <script lang="ts">
 import Vue from 'vue';
 // @ts-ignore
-import { Tabs } from 'ant-design-vue/lib';
+import Tabs from 'ant-design-vue/lib/tabs';
 import TabPaneContent from './TabPaneContent.vue';
 const { TabPane } = Tabs;
 
@@ -57,12 +69,20 @@ export default Vue.extend({
 
 <style scoped>
 .about {
-  @apply bg-gray-800 z-20 py-24;
+  @apply bg-gray-800 z-20 pt-8;
   height: 75vh;
 }
 
 h2 {
-  @apply text-6xl font-bold mb-10;
+  @apply text-6xl font-bold mb-8;
+}
+
+h3 {
+  @apply text-2xl mb-8;
+}
+
+p {
+  @apply text-lg mb-4;
 }
 
 >>> .ant-tabs-tabpane:nth-of-type(even) .tab-content {

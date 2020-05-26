@@ -41,7 +41,7 @@ export default Vue.extend({
   transform-origin: 0 0;
 }
 >>> .ant-tabs-bar {
-  margin: 0 0 16px 0;
+  margin: 0 0 2rem 0;
   border-bottom: 1px solid #e8e8e8;
   outline: none;
   transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
