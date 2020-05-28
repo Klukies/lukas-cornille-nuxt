@@ -1,7 +1,7 @@
 <template>
   <header>
     <Brand />
-    <Hamburger @click="$emit('toggleMenu')" />
+    <Hamburger :is-active="isMenuActive" @click="$emit('toggleMenu')" />
     <Navigation @openContactModal="$emit('openContactModal')" />
   </header>
 </template>
@@ -14,6 +14,12 @@ import Brand from './Brand.vue';
 
 export default Vue.extend({
   components: { Brand, Navigation, Hamburger },
+  props: {
+    isMenuActive: {
+      type: Boolean,
+      required: true,
+    },
+  },
 });
 </script>
 

@@ -15,15 +15,14 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  components: {},
-  data() {
-    return {
-      isActive: false,
-    };
+  props: {
+    isActive: {
+      type: Boolean,
+      required: true,
+    },
   },
   methods: {
     handleClick() {
-      this.isActive = !this.isActive;
       this.$emit('click');
     },
   },
