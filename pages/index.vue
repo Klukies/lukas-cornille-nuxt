@@ -82,7 +82,7 @@ export default Vue.extend({
   display: inline-block;
   box-sizing: border-box;
   height: 100%;
-  padding: 12px 16px;
+  padding: 12px 0;
   font-size: 1.5rem;
   text-decoration: none;
   text-align: center;
@@ -92,6 +92,13 @@ export default Vue.extend({
   transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #718096;
 }
+
+@media screen and (min-width: 768px) {
+  >>> .ant-tabs-nav .ant-tabs-tab {
+    padding: 12px 16px;
+  }
+}
+
 >>> .ant-tabs-nav .ant-tabs-tab:last-child {
   margin-right: 0;
 }

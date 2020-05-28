@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section id="about" class="about">
     <h2>About Me</h2>
     <Tabs v-model="activeTab">
       <TabPane key="1" tab="About">
@@ -70,7 +70,7 @@ export default Vue.extend({
 <style scoped>
 .about {
   @apply bg-gray-800 z-20 pt-8;
-  height: 75vh;
+  min-height: 75vh;
 }
 
 h2 {
@@ -78,7 +78,7 @@ h2 {
 }
 
 h3 {
-  @apply text-2xl mb-8;
+  @apply text-2xl mb-4;
 }
 
 p {
@@ -87,5 +87,14 @@ p {
 
 >>> .ant-tabs-tabpane:nth-of-type(even) .tab-content {
   @apply flex-row-reverse;
+}
+
+@screen md {
+  .about {
+    height: 75vh;
+  }
+  h3 {
+    @apply mb-8;
+  }
 }
 </style>

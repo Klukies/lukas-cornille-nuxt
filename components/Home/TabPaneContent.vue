@@ -16,12 +16,22 @@ export default Vue.extend({});
 </script>
 
 <style scoped>
-.tab-content {
-  @apply flex;
+.tab-content-image {
+  @apply w-1/3 m-auto;
 }
 
-.tab-content-image,
-.tab-content-text {
-  @apply w-1/2 p-8;
+@screen lg {
+  .tab-content {
+    @apply flex;
+  }
+
+  .tab-content-image,
+  .tab-content-text {
+    @apply w-1/2 p-8;
+  }
+
+  .tab-content-image {
+    @apply block;
+  }
 }
 </style>
