@@ -71,6 +71,8 @@ export default Vue.extend({
 .about {
   @apply bg-gray-800 z-20 pt-8;
   min-height: 75vh;
+  padding-top: 80px;
+  margin-top: -80px;
 }
 
 h2 {

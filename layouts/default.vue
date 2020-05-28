@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header @openContactModal="openContactModal" @toggleMenu="toggleMenu" />
-    <MobileMenu v-scroll-lock="isMenuActive" :is-active="isMenuActive" />
+    <MobileMenu v-scroll-lock="isMenuActive" :is-active="isMenuActive" @click="toggleMenu" />
     <nuxt />
   </div>
 </template>
