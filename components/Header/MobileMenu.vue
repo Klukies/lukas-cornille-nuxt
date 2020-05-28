@@ -2,7 +2,6 @@
   <div :class="{ 'is-active': isActive }">
     <nav @click="$emit('click')">
       <nuxt-link to="/">Home</nuxt-link>
-      <nuxt-link to="/#about">About</nuxt-link>
       <nuxt-link to="/blog">Blog</nuxt-link>
       <button>Let's talk</button>
     </nav>
@@ -24,7 +23,7 @@ export default Vue.extend({
 
 <style scoped>
 div {
-  @apply fixed z-50 w-screen bg-gray-900;
+  @apply fixed flex z-50 w-screen bg-gray-900;
   height: calc(100vh - 80px);
   margin-top: 80px;
   transform: translateX(-100%);
@@ -40,7 +39,8 @@ div {
 }
 
 nav {
-  @apply flex flex-col text-center justify-center text-4xl;
+  @apply relative flex flex-col text-center justify-center text-4xl w-full;
+  top: -40px;
 }
 
 nav a {

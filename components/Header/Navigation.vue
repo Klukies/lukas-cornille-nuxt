@@ -1,7 +1,6 @@
 <template>
   <nav>
     <nuxt-link to="/">Home</nuxt-link>
-    <nuxt-link to="/#about">About</nuxt-link>
     <nuxt-link to="/blog">Blog</nuxt-link>
     <LetsTalk @openContactModal="$emit('openContactModal')" />
   </nav>

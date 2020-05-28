@@ -1,7 +1,7 @@
 <template>
   <section class="about">
     <span id="about"></span>
-    <h2>About Me</h2>
+    <h2 ref="about">About Me</h2>
     <Tabs v-model="activeTab">
       <TabPane v-for="tab in tabs" :key="tab.node.tabtitle" :tab="tab.node.tabtitle">
         <div class="tab-content">
@@ -36,6 +36,7 @@ export default Vue.extend({
   data() {
     return {
       activeTab: 'About',
+      isActive: false,
     };
   },
 });

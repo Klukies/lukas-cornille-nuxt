@@ -33,7 +33,7 @@ export default Vue.extend({
 <style scoped>
 .hero {
   @apply flex z-10 bg-gray-900 h-screen;
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 .hero-info {
@@ -61,6 +61,7 @@ h2 {
 @screen md {
   .hero {
     height: calc(75vh + 80px);
+    padding-top: 80px;
   }
 }
 
