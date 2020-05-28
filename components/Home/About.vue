@@ -97,7 +97,7 @@ p {
 
 @screen md {
   .about {
-    height: 75vh;
+    min-height: 75vh;
   }
   h3 {
     @apply mb-8;

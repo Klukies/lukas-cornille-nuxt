@@ -10,8 +10,7 @@
     </div>
     <div class="hero-image">
       <picture>
-        <source srcset="~/assets/images/me.webp" type="image/webp" />
-        <source srcset="~/assets/images/me.png" type="image/png" />
+        <source type="image/webp" srcset="~/assets/images/me.webp" />
         <img src="~/assets/images/me.png" alt="me" />
       </picture>
       <span class="spotlight"></span>
@@ -55,7 +54,7 @@ h2 {
 
 @screen sm {
   h1 {
-    @apply text-7xl font-bold;
+    @apply text-6xl font-bold;
   }
 }
 

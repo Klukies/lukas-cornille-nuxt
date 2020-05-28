@@ -62,7 +62,7 @@ section {
 
 @screen 2xl {
   section {
-    @apply px-64;
+    @apply px-48;
   }
 }
 </style>
