@@ -33,8 +33,8 @@ export default Vue.extend({
 
 <style scoped>
 .hero {
-  @apply flex z-10 bg-gray-900;
-  height: 75vh;
+  @apply flex z-10 bg-gray-900 h-screen;
+  padding-top: 80px;
 }
 
 .hero-info {
@@ -56,6 +56,12 @@ h2 {
 @screen sm {
   h1 {
     @apply text-7xl font-bold;
+  }
+}
+
+@screen md {
+  .hero {
+    height: calc(75vh + 80px);
   }
 }
 

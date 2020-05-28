@@ -1,5 +1,6 @@
 <template>
-  <section id="about" class="about">
+  <section class="about">
+    <span id="about"></span>
     <h2>About Me</h2>
     <Tabs v-model="activeTab">
       <TabPane key="1" tab="About">
@@ -68,11 +69,14 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+#about {
+  @apply relative;
+  top: -80px;
+}
+
 .about {
   @apply bg-gray-800 z-20 pt-8;
-  min-height: 75vh;
-  padding-top: 80px;
-  margin-top: -80px;
+  min-height: calc(75vh + 2rem);
 }
 
 h2 {

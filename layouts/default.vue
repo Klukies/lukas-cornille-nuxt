@@ -41,7 +41,7 @@ html {
 }
 
 main {
-  @apply my-0 mx-auto pt-20;
+  @apply my-0 mx-auto;
 }
 
 section {
