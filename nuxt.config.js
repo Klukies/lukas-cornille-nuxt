@@ -19,7 +19,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: 'green' },
+  loading: { color: '#d36135' },
   /*
    ** Global CSS
    */
@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-scroll-lock.client.ts'],
+  plugins: ['~/plugins/vue-scroll-lock.client.ts', '~/plugins/prismic-vue.ts'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -41,14 +41,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-svg-loader', '@nuxtjs/prismic'],
-
-  prismic: {
-    endpoint: 'https://lukas-cornille.cdn.prismic.io/api/v2',
-    // TODO: Add link-resolver and html-serializer
-    // linkResolver: '@/plugins/link-resolver',
-    // htmlSerializer: '@/plugins/html-serializer'
-  },
+  modules: ['nuxt-svg-loader'],
 
   /*
    ** Build configuration
