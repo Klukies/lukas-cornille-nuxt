@@ -3,49 +3,16 @@
     <span id="about"></span>
     <h2>About Me</h2>
     <Tabs v-model="activeTab">
-      <TabPane key="1" tab="About">
-        <TabPaneContent>
-          <template v-slot:image>
-            <img src="~/assets/images/about.png" />
-          </template>
-          <template v-slot:text>
-            <h3>A developer with passion for new technologies</h3>
-            <p>
-              My name is Lukas, and I love for everything web related. I've written applications in
-              several backend and frontend languages/frameworks during my time as a developer, but
-              my passion has only grown.
-            </p>
-            <p>
-              On this site, you can find information about me and read some blogposts related to web
-              and developer related activities.
-            </p>
-            <p>Got any questions or want to have a chat? Be sure to contact me!</p>
-          </template>
-        </TabPaneContent>
-      </TabPane>
-      <TabPane key="2" tab="Skills">
-        <TabPaneContent>
-          <template v-slot:image>
-            <img src="~/assets/images/skills.png" />
-          </template>
-          <template v-slot:text>some text</template>
-        </TabPaneContent>
-      </TabPane>
-      <TabPane key="3" tab="Editor">
-        <TabPaneContent>
-          <template v-slot:image>
-            <img src="~/assets/images/editor.png" />
-          </template>
-          <template v-slot:text>some text</template>
-        </TabPaneContent>
-      </TabPane>
-      <TabPane key="4" tab="How?">
-        <TabPaneContent>
-          <template v-slot:image>
-            <img src="~/assets/images/how.png" />
-          </template>
-          <template v-slot:text>some text</template>
-        </TabPaneContent>
+      <TabPane v-for="tab in tabs" :key="tab.node.tabtitle" :tab="tab.node.tabtitle">
+        <div class="tab-content">
+          <div class="tab-content-image">
+            <PrismicImage :field="tab.node.image" />
+          </div>
+          <div class="tab-content-text">
+            <PrismicRichText :field="tab.node.title" />
+            <PrismicRichText :field="tab.node.text" />
+          </div>
+        </div>
       </TabPane>
     </Tabs>
   </section>
@@ -55,14 +22,20 @@
 import Vue from 'vue';
 // @ts-ignore
 import Tabs from 'ant-design-vue/lib/tabs';
-import TabPaneContent from './TabPaneContent.vue';
+import { Tab } from '~/graphql/types';
 const { TabPane } = Tabs;
 
 export default Vue.extend({
-  components: { Tabs, TabPane, TabPaneContent },
+  components: { Tabs, TabPane },
+  props: {
+    tabs: {
+      type: Array as () => Tab[],
+      required: true,
+    },
+  },
   data() {
     return {
-      activeTab: '1',
+      activeTab: 'About',
     };
   },
 });
@@ -83,11 +56,11 @@ h2 {
   @apply text-6xl font-bold mb-8;
 }
 
-h3 {
+>>> h3 {
   @apply text-2xl mb-4;
 }
 
-p {
+>>> p {
   @apply text-lg mb-4;
 }
 
@@ -99,8 +72,27 @@ p {
   .about {
     min-height: 75vh;
   }
-  h3 {
+  >>> h3 {
     @apply mb-8;
+  }
+}
+
+.tab-content-image {
+  @apply w-1/3 m-auto;
+}
+
+@screen lg {
+  .tab-content {
+    @apply flex;
+  }
+
+  .tab-content-image,
+  .tab-content-text {
+    @apply w-1/2 p-8;
+  }
+
+  .tab-content-image {
+    @apply block;
   }
 }
 </style>

@@ -1,17 +1,24 @@
 <template>
   <main>
     <Hero />
-    <About />
+    <About :tabs="tabs" />
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import About from '../components/Home/About.vue';
-import Hero from '../components/Home/Hero.vue';
+import About from '~/components/Home/About.vue';
+import Hero from '~/components/Home/Hero.vue';
+import { prismic } from '~/graphql/prismic';
+import { GET_ABOUT_TABS } from '~/graphql/home';
+import { Tabs } from '~/graphql/types';
 
 export default Vue.extend({
   components: { Hero, About },
+  async asyncData() {
+    const { data }: Tabs = await prismic.query({ query: GET_ABOUT_TABS });
+    return { tabs: data.allAbout_tabs.edges };
+  },
 });
 </script>
 
