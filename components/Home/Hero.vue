@@ -10,8 +10,10 @@
     </div>
     <div class="hero-image">
       <picture>
-        <source type="image/webp" srcset="~/assets/images/me.webp" media="(min-width: 1024px)" />
-        <source type="image/png" srcset="~/assets/images/me.png" media="(min-width: 1024px)" />
+        <source
+          srcset="https://images.prismic.io/lukas-cornille/1449d3da-8361-48ed-a011-521696688ccd_me.png?auto=format"
+          media="(min-width: 1024px)"
+        />
         <img src="~/assets/images/blank.png" alt="me" />
       </picture>
       <span class="spotlight"></span>
