@@ -6,7 +6,7 @@
       <TabPane v-for="tab in tabs" :key="tab.node.tabtitle" :tab="tab.node.tabtitle">
         <div class="tab-content">
           <div class="tab-content-image">
-            <PrismicImage :field="tab.node.image" />
+            <img v-lazy-load :data-src="tab.node.image.url" :alt="tab.node.image.alt" />
           </div>
           <div class="tab-content-text">
             <PrismicRichText :field="tab.node.title" />

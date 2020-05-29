@@ -48,6 +48,15 @@ section {
   @apply relative px-4;
 }
 
+.lazyLoad {
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+
+.isLoaded {
+  opacity: 1;
+}
+
 *,
 *:before,
 *:after {
