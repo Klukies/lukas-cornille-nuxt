@@ -24,123 +24,75 @@ export default Vue.extend({
 
 <style scoped>
 >>> .ant-tabs {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  font-variant: tabular-nums;
-  line-height: 1.5;
-  list-style: none;
-  font-feature-settings: 'tnum';
-  position: relative;
-  overflow: hidden;
-  zoom: 1;
+  @apply relative overflow-hidden m-0 p-0 list-none;
 }
 >>> .ant-tabs-ink-bar {
-  position: absolute;
+  @apply absolute left-0 w-0 bg-orange-600;
   bottom: 1px;
-  left: 0;
   z-index: 1;
-  box-sizing: border-box;
-  width: 0;
   height: 2px;
-  background-color: #d36135;
   transform-origin: 0 0;
 }
 >>> .ant-tabs-bar {
-  margin: 0 0 2rem 0;
-  border-bottom: 1px solid #e8e8e8;
-  outline: none;
+  @apply mb-8 border-b border-solid border-gray-200 outline-none;
   transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 >>> .ant-tabs-nav-container {
-  position: relative;
-  box-sizing: border-box;
+  @apply relative overflow-hidden whitespace-no-wrap;
   margin-bottom: -1px;
-  overflow: hidden;
-  font-size: 14px;
-  line-height: 1.5;
-  white-space: nowrap;
   transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  zoom: 1;
 }
 >>> .ant-tabs-tab-prev,
 >>> .ant-tabs-tab-next {
-  display: none;
+  @apply hidden;
 }
 >>> .ant-tabs-nav-wrap {
+  @apply overflow-hidden;
   margin-bottom: -1px;
-  overflow: hidden;
 }
 >>> .ant-tabs-nav-scroll {
-  overflow: hidden;
-  white-space: nowrap;
+  @apply overflow-hidden whitespace-no-wrap;
 }
 >>> .ant-tabs-nav {
-  position: relative;
-  box-sizing: border-box;
-  margin: 0;
-  padding-left: 0;
-  list-style: none;
+  @apply relative m-0 pl-0 list-none;
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 >>> .ant-tabs-nav .ant-tabs-tab {
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  height: 100%;
-  padding: 12px 0;
-  font-size: 1.5rem;
-  text-decoration: none;
-  text-align: center;
-  width: 25%;
-  font-weight: 500;
-  cursor: pointer;
+  @apply relative inline-block h-full text-2xl text-center w-1/4 font-medium cursor-pointer text-gray-500 py-3;
   transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  color: #718096;
 }
 
 @media screen and (min-width: 768px) {
   >>> .ant-tabs-nav .ant-tabs-tab {
-    padding: 12px 16px;
+    @apply px-4;
   }
 }
 
 >>> .ant-tabs-nav .ant-tabs-tab:last-child {
-  margin-right: 0;
+  @apply mr-0;
 }
->>> .ant-tabs-nav .ant-tabs-tab:hover {
-  color: #e2e8f0;
+>>> .ant-tabs-nav .ant-tabs-tab:hover,
+>>> .ant-tabs-nav .ant-tabs-tab-active {
+  @apply text-white;
 }
 >>> .ant-tabs-nav .ant-tabs-tab:active {
-  color: #d36135;
+  @apply text-orange-600;
 }
 >>> .ant-tabs-nav .ant-tabs-tab .anticon {
   margin-right: 8px;
 }
->>> .ant-tabs-nav .ant-tabs-tab-active {
-  color: #e2e8f0;
-}
 >>> .ant-tabs .ant-tabs-top-content {
-  width: 100%;
+  @apply w-full;
 }
 >>> .ant-tabs .ant-tabs-top-content > .ant-tabs-tabpane {
-  flex-shrink: 0;
-  width: 100%;
-  -webkit-backface-visibility: hidden;
-  opacity: 1;
+  @apply flex-shrink-0 w-full opacity-100;
   transition: opacity 0.3s;
 }
 >>> .ant-tabs .ant-tabs-top-content > .ant-tabs-tabpane-inactive {
-  height: 0;
-  padding: 0 !important;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
+  @apply h-0 p-0 overflow-hidden opacity-0 pointer-events-none;
 }
 >>> .ant-tabs .ant-tabs-top-content.ant-tabs-content-animated {
-  display: flex;
-  flex-direction: row;
+  @apply flex flex-row;
   will-change: margin-left;
 }
 >>> .ant-tabs-top .ant-tabs-ink-bar-animated {
