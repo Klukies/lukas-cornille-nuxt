@@ -3,6 +3,7 @@
     ref="hamburger"
     class="hamburger hamburger-spin"
     :class="{ 'is-active': isActive }"
+    aria-label="Toggle Mobile Menu"
     @click="handleClick"
   >
     <span class="hamburger-box">

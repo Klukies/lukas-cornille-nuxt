@@ -1,12 +1,17 @@
 <template>
   <div>
-    <a href="https://github.com/LukasCornille" target="_blank">
+    <a href="https://github.com/LukasCornille" target="_blank" rel="noreferrer" aria-label="GitHub">
       <GitHubLogo />
     </a>
-    <a href="https://twitter.com/Klukies" target="_blank">
+    <a href="https://twitter.com/Klukies" target="_blank" rel="noreferrer" aria-label="Twitter">
       <TwitterLogo />
     </a>
-    <a href="https://www.linkedin.com/in/lukas-cornille-594376150/" target="_blank">
+    <a
+      href="https://www.linkedin.com/in/lukas-cornille-594376150/"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="LinkedIn"
+    >
       <LinkedInLogo />
     </a>
   </div>

@@ -10,8 +10,9 @@
     </div>
     <div class="hero-image">
       <picture>
-        <source type="image/webp" srcset="~/assets/images/me.webp" />
-        <img src="~/assets/images/me.png" alt="me" />
+        <source type="image/webp" srcset="~/assets/images/me.webp" media="(min-width: 1024px)" />
+        <source type="image/png" srcset="~/assets/images/me.png" media="(min-width: 1024px)" />
+        <img src="~/assets/images/blank.png" alt="me" />
       </picture>
       <span class="spotlight"></span>
     </div>
