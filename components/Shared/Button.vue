@@ -1,7 +1,5 @@
 <template>
-  <button :class="classes.join(' ')" @click="$emit('click')">
-    {{ label }}
-  </button>
+  <button :class="classes.join(' ')" @click="$emit('click')">{{ label }}</button>
 </template>
 
 <script lang="ts">
@@ -34,11 +32,11 @@ button {
 }
 
 .button-swipe-left {
-  box-shadow: inset 0 0 0 0 #c05621;
+  box-shadow: inset 0 0 0 0 #d36135;
   transition: ease-out 0.4s;
 }
 
 .button-swipe-left:hover {
-  box-shadow: inset 200px 0 0 0 #c05621;
+  box-shadow: inset 200px 0 0 0 #d36135;
 }
 </style>

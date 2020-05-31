@@ -27,7 +27,7 @@ export default Vue.extend({
   @apply relative overflow-hidden m-0 p-0 list-none;
 }
 >>> .ant-tabs-ink-bar {
-  @apply absolute left-0 w-0 bg-orange-600;
+  @apply absolute left-0 w-0 bg-orange-700;
   bottom: 1px;
   z-index: 1;
   height: 2px;
@@ -76,7 +76,7 @@ export default Vue.extend({
   @apply text-white;
 }
 >>> .ant-tabs-nav .ant-tabs-tab:active {
-  @apply text-orange-600;
+  @apply text-orange-700;
 }
 >>> .ant-tabs-nav .ant-tabs-tab .anticon {
   margin-right: 8px;
