@@ -30,7 +30,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-scroll-lock.client.ts', '~/plugins/prismic-vue.ts'],
+  plugins: [
+    '~/plugins/vue-scroll-lock.client.ts',
+    '~/plugins/vue-composition-api.ts',
+    '~/plugins/prismic-vue.ts',
+  ],
   /*
    ** Nuxt.js dev-modules
    */
