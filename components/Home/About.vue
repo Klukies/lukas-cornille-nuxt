@@ -63,7 +63,7 @@ h2 {
 }
 
 >>> ul li::before {
-  @apply inline-block absolute rounded-full border-2 border-orange-700 border-solid;
+  @apply inline-block absolute rounded-full border-2 border-blue-500 border-solid;
   content: '';
   width: 20px;
   height: 20px;
