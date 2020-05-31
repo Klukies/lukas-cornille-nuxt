@@ -65,6 +65,25 @@ h2 {
   @apply text-lg mb-4;
 }
 
+>>> strong {
+  @apply text-orange-700;
+}
+
+>>> ul li {
+  @apply relative pl-8;
+}
+
+>>> ul li::before {
+  @apply inline-block absolute rounded-full border-2 border-orange-700 border-solid;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('~assets/icons/check-background.svg?inline');
+}
+
 >>> .ant-tabs-tabpane:nth-of-type(even) .tab-content {
   @apply flex-row-reverse;
 }
