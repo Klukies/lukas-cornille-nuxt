@@ -54,10 +54,6 @@ h2 {
   @apply text-2xl mb-4;
 }
 
->>> p {
-  @apply text-lg mb-4;
-}
-
 >>> strong {
   @apply text-orange-700;
 }
@@ -81,10 +77,15 @@ h2 {
   @apply flex-row-reverse;
 }
 
+>>> .tab-content {
+  @apply max-w-xl mx-auto;
+}
+
 @screen md {
   .about {
     min-height: 75vh;
   }
+
   >>> h3 {
     @apply mb-8;
   }
@@ -96,7 +97,7 @@ h2 {
 
 @screen lg {
   .tab-content {
-    @apply flex;
+    @apply flex max-w-full;
   }
 
   .tab-content-image,

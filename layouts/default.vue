@@ -37,7 +37,7 @@ export default Vue.extend({
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
-  @apply box-border text-white;
+  @apply box-border text-white bg-gray-900;
 }
 
 main {
@@ -46,6 +46,10 @@ main {
 
 section {
   @apply relative px-4;
+}
+
+p {
+  @apply text-lg mb-4;
 }
 
 .lazyLoad {
