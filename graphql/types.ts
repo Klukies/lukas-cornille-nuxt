@@ -17,6 +17,10 @@ interface Title {
   text: string;
 }
 
+interface Meta {
+  firstPublicationDate: string;
+}
+
 export interface Tab {
   node: {
     tabtitle: string;
@@ -31,6 +35,24 @@ export interface Tabs {
     // eslint-disable-next-line camelcase
     allAbout_tabs: {
       edges: Tab[];
+    };
+  };
+}
+
+export interface Post {
+  node: {
+    category: string;
+    summary: RichText[];
+    title: Title;
+    wppublicationdate?: string;
+    _meta: Meta;
+  };
+}
+
+export interface Posts {
+  data: {
+    allPosts: {
+      edges: Post[];
     };
   };
 }

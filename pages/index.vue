@@ -2,22 +2,27 @@
   <main>
     <Hero />
     <About :tabs="tabs" />
+    <BlogPreview :posts="posts" />
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import BlogPreview from '../components/Home/BlogPreview.vue';
 import About from '~/components/Home/About.vue';
 import Hero from '~/components/Home/Hero.vue';
 import { prismic } from '~/graphql/prismic';
-import { GET_ABOUT_TABS } from '~/graphql/home';
-import { Tabs } from '~/graphql/types';
+import { GET_ABOUT_TABS } from '~/graphql/tab';
+import { GET_POSTS_PREVIEW } from '~/graphql/post';
+import { Tabs, Posts } from '~/graphql/types';
 
 export default Vue.extend({
-  components: { Hero, About },
+  components: { Hero, About, BlogPreview },
   async asyncData() {
-    const { data }: Tabs = await prismic.query({ query: GET_ABOUT_TABS });
-    return { tabs: data.allAbout_tabs.edges };
+    const { data: tabData }: Tabs = await prismic.query({ query: GET_ABOUT_TABS });
+    const { data: postData }: Posts = await prismic.query({ query: GET_POSTS_PREVIEW });
+
+    return { tabs: tabData.allAbout_tabs.edges, posts: postData.allPosts.edges.slice(0, 5) };
   },
 });
 </script>
