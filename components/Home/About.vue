@@ -35,7 +35,6 @@ export default Vue.extend({
   data() {
     return {
       activeTab: 'About',
-      isActive: false,
     };
   },
 });
