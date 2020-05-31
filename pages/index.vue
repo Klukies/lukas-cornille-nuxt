@@ -91,6 +91,7 @@ export default Vue.extend({
 }
 >>> .ant-tabs .ant-tabs-top-content > .ant-tabs-tabpane {
   @apply flex-shrink-0 w-full opacity-100;
+  -webkit-backface-visibility: hidden;
   transition: opacity 0.3s;
 }
 >>> .ant-tabs .ant-tabs-top-content > .ant-tabs-tabpane-inactive {
@@ -98,7 +99,6 @@ export default Vue.extend({
 }
 >>> .ant-tabs .ant-tabs-top-content.ant-tabs-content-animated {
   @apply flex flex-row;
-  will-change: margin-left;
 }
 >>> .ant-tabs-top .ant-tabs-ink-bar-animated {
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
