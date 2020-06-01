@@ -1,4 +1,4 @@
-import { computed } from '@vue/composition-api';
+import { computed } from 'nuxt-composition-api';
 import { Post } from '../graphql/types';
 
 enum MONTHS {

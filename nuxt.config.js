@@ -30,11 +30,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/vue-scroll-lock.client.ts',
-    '~/plugins/vue-composition-api.ts',
-    '~/plugins/prismic-vue.ts',
-  ],
+  plugins: ['~/plugins/vue-scroll-lock.client.ts', '~/plugins/prismic-vue.ts'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -44,6 +40,7 @@ export default {
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    'nuxt-composition-api',
   ],
   /*
    ** Nuxt.js modules
@@ -68,5 +65,10 @@ export default {
         });
       }
     },
+  },
+  generate: {
+    // This is required with composition api due to a bug
+    // https://github.com/nuxt-community/composition-api/issues/44
+    interval: 2000,
   },
 };
