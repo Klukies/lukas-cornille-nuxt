@@ -10,6 +10,7 @@ export const GET_POSTS_PREVIEW = gql`
           category
           summary
           _meta {
+            uid
             firstPublicationDate
           }
         }

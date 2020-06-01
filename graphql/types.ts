@@ -18,6 +18,7 @@ interface Title {
 }
 
 interface Meta {
+  uid: string;
   firstPublicationDate: string;
 }
 
@@ -43,7 +44,7 @@ export interface Post {
   node: {
     category: string;
     summary: RichText[];
-    title: Title;
+    title: Title[];
     wppublicationdate?: string;
     _meta: Meta;
   };

@@ -1,7 +1,7 @@
 <template>
   <article class="post-preview">
-    <nuxt-link to="/" class="post-preview-header">
-      <PrismicRichText :field="post.node.title" />
+    <nuxt-link :to="slug" class="post-preview-header">
+      <h3>{{ post.node.title[0].text }}</h3>
       <div class="post-preview-info">
         <span>{{ formattedDate }}</span>
         <span>{{ post.node.category }}</span>
@@ -10,7 +10,7 @@
     <div class="post-preview-body">
       <PrismicRichText :field="post.node.summary" />
     </div>
-    <nuxt-link to="/" class="read-more">Read more</nuxt-link>
+    <nuxt-link :to="slug" class="read-more">Read more</nuxt-link>
   </article>
 </template>
 
@@ -28,9 +28,9 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { formattedDate } = usePost(props.post);
+    const { formattedDate, slug } = usePost(props.post);
 
-    return { props, formattedDate };
+    return { props, formattedDate, slug };
   },
 });
 </script>
@@ -41,7 +41,7 @@ export default defineComponent({
 }
 
 .read-more {
-  @apply text-lg text-blue-500 underline;
+  @apply text-lg text-orange-600 underline;
 }
 
 .post-preview-header {

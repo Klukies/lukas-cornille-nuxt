@@ -18,7 +18,7 @@ enum MONTHS {
 
 const formatPublicationDate = (prismicPublicationDate: string, wpPublicationDate?: string) => {
   const parseDate = (date: Date) => {
-    return `${MONTHS[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`;
+    return `${MONTHS[date.getMonth()]} ${date.getUTCDate()}, ${date.getFullYear()}`;
   };
 
   return wpPublicationDate
@@ -30,6 +30,7 @@ export const usePost = (post: Post) => {
   const formattedDate = computed(() =>
     formatPublicationDate(post.node._meta.firstPublicationDate, post.node.wppublicationdate),
   );
+  const slug = computed(() => `/blog/${post.node._meta.uid}`);
 
-  return { formattedDate };
+  return { formattedDate, slug };
 };
