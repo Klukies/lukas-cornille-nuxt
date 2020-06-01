@@ -43,7 +43,8 @@ export interface Tabs {
 export interface Post {
   node: {
     category: string;
-    summary: RichText[];
+    summary?: RichText[];
+    body?: RichText[];
     title: Title[];
     wppublicationdate?: string;
     _meta: Meta;

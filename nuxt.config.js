@@ -66,9 +66,4 @@ export default {
       }
     },
   },
-  generate: {
-    // This is required with composition api due to a bug
-    // https://github.com/nuxt-community/composition-api/issues/44
-    interval: 2000,
-  },
 };

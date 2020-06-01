@@ -18,3 +18,22 @@ export const GET_POSTS_PREVIEW = gql`
     }
   }
 `;
+
+export const GET_POST = gql`
+  query post($slug: String!) {
+    allPosts(uid: $slug) {
+      edges {
+        node {
+          title
+          wppublicationdate
+          category
+          body
+          _meta {
+            uid
+            firstPublicationDate
+          }
+        }
+      }
+    }
+  }
+`;
