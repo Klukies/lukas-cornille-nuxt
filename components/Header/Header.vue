@@ -2,7 +2,7 @@
   <header>
     <Brand />
     <Hamburger :is-active="isMenuActive" @click="$emit('toggleMenu')" />
-    <Navigation @openContactModal="$emit('openContactModal')" />
+    <Navigation :is-blog-active="isBlogActive" @openContactModal="$emit('openContactModal')" />
   </header>
 </template>
 
@@ -16,6 +16,10 @@ export default Vue.extend({
   components: { Brand, Navigation, Hamburger },
   props: {
     isMenuActive: {
+      type: Boolean,
+      required: true,
+    },
+    isBlogActive: {
       type: Boolean,
       required: true,
     },

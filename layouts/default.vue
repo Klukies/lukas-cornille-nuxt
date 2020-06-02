@@ -2,10 +2,16 @@
   <div>
     <Header
       :is-menu-active="isMenuActive"
+      :is-blog-active="isBlogActive"
       @openContactModal="openContactModal"
       @toggleMenu="toggleMenu"
     />
-    <MobileMenu v-scroll-lock="isMenuActive" :is-active="isMenuActive" @click="toggleMenu" />
+    <MobileMenu
+      v-scroll-lock="isMenuActive"
+      :is-active="isMenuActive"
+      :is-blog-active="isBlogActive"
+      @click="toggleMenu"
+    />
     <nuxt />
   </div>
 </template>
@@ -21,6 +27,12 @@ export default Vue.extend({
     return {
       isMenuActive: false,
     };
+  },
+  computed: {
+    isBlogActive() {
+      const path = this.$route.path.split('/');
+      return path.length > 2 && path[1] === 'blog';
+    },
   },
   methods: {
     openContactModal() {

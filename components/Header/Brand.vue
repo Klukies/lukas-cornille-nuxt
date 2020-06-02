@@ -1,8 +1,8 @@
 <template>
-  <a>
+  <nuxt-link to="/">
     <span>&#60;/&#62;</span>
     Lukas
-  </a>
+  </nuxt-link>
 </template>
 
 <script lang="ts">

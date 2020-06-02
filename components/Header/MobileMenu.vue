@@ -2,7 +2,7 @@
   <div :class="{ 'is-active': isActive }">
     <nav @click="$emit('click')">
       <nuxt-link to="/">Home</nuxt-link>
-      <nuxt-link to="/blog">Blog</nuxt-link>
+      <nuxt-link to="/blog" :class="{ 'nuxt-link-exact-active': isBlogActive }">Blog</nuxt-link>
       <button>Let's talk</button>
     </nav>
   </div>
@@ -14,6 +14,10 @@ import Vue from 'vue';
 export default Vue.extend({
   props: {
     isActive: {
+      type: Boolean,
+      required: true,
+    },
+    isBlogActive: {
       type: Boolean,
       required: true,
     },

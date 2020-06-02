@@ -1,7 +1,7 @@
 <template>
   <nav>
     <nuxt-link to="/">Home</nuxt-link>
-    <nuxt-link to="/blog">Blog</nuxt-link>
+    <nuxt-link to="/blog" :class="{ 'nuxt-link-exact-active': isBlogActive }">Blog</nuxt-link>
     <LetsTalk @openContactModal="$emit('openContactModal')" />
   </nav>
 </template>
@@ -12,8 +12,11 @@ import LetsTalk from './LetsTalk.vue';
 
 export default Vue.extend({
   components: { LetsTalk },
-  data() {
-    return {};
+  props: {
+    isBlogActive: {
+      type: Boolean,
+      required: true,
+    },
   },
 });
 </script>

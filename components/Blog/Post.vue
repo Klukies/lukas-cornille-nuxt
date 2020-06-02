@@ -75,7 +75,7 @@ span {
 }
 
 >>> code {
-  @apply rounded text-sm leading-8 mb-4 bg-gray-800 text-gray-300;
+  @apply rounded text-sm leading-8 mb-4 bg-gray-800 text-gray-300 p-4;
   font-family: 'Fira Code', 'Menlo', 'Monaco', 'Consolas', monospace;
 }
 
@@ -90,10 +90,6 @@ span {
 
   .text {
     @apply max-w-xl mx-auto;
-  }
-
-  >>> code {
-    min-width: 36rem;
   }
 
   .code {
