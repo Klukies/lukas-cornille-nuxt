@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "latest",
+    "@nuxtjs/markdownit": "^1.2.9",
     "@nuxtjs/prismic": "^1.2.1",
     "@types/body-scroll-lock": "^2.6.1",
     "@types/prismic-dom": "^2.1.1",
@@ -31,6 +32,7 @@
     "apollo-client": "^2.6.10",
     "apollo-link-prismic": "^1.0.7",
     "graphql-tag": "^2.10.3",
+    "markdown-it-highlightjs": "^3.1.0",
     "nuxt": "latest",
     "nuxt-composition-api": "latest",
     "nuxt-lazy-load": "^1.2.4",
@@ -38,7 +40,8 @@
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.7.1",
     "prismic-vue": "^2.0.1",
-    "v-scroll-lock": "^1.2.0"
+    "v-scroll-lock": "^1.2.0",
+    "vue-fragment": "^1.5.1"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "latest",

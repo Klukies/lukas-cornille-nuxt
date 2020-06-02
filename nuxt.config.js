@@ -26,7 +26,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [{ src: '~/node_modules/highlight.js/styles/atom-one-dark.css' }],
   /*
    ** Plugins to load before mounting the App
    */
@@ -45,7 +45,12 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-svg-loader', ['nuxt-lazy-load', { directiveOnly: true }]],
+  modules: ['nuxt-svg-loader', ['nuxt-lazy-load', { directiveOnly: true }], '@nuxtjs/markdownit'],
+
+  markdownit: {
+    injected: true,
+    use: ['markdown-it-highlightjs'],
+  },
 
   /*
    ** Build configuration
