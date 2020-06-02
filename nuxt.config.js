@@ -81,7 +81,7 @@ export default async () => {
     /*
      ** Global CSS
      */
-    css: [{ src: '~/node_modules/highlight.js/styles/atom-one-dark.css' }],
+    css: [],
     /*
      ** Plugins to load before mounting the App
      */
