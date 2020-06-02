@@ -23,5 +23,15 @@ export default Vue.extend({
 
     return { post: data.allPosts.edges[0] };
   },
+  head() {
+    return {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap',
+        },
+      ],
+    };
+  },
 });
 </script>

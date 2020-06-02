@@ -9,8 +9,14 @@
     </div>
     <div v-if="post.node.body" class="post-body">
       <Fragment v-for="(items, i) in formattedBody" :key="i">
-        <PrismicRichText v-if="items[0].type !== 'preformatted'" :field="items" />
-        <div v-for="(codeBlock, j) in items" v-else :key="j" v-html="$md.render(codeBlock.text)" />
+        <PrismicRichText v-if="items[0].type !== 'preformatted'" class="text" :field="items" />
+        <div
+          v-for="(codeBlock, j) in items"
+          v-else
+          :key="j"
+          class="code"
+          v-html="$md.render(codeBlock.text)"
+        />
       </Fragment>
     </div>
   </article>
@@ -45,7 +51,7 @@ h1 {
 }
 
 .post-header {
-  @apply block mb-8;
+  @apply block mb-8 mx-auto;
 }
 
 .post-info {
@@ -60,10 +66,30 @@ span {
   @apply text-gray-600;
 }
 
+>>> code {
+  @apply rounded text-sm leading-8;
+  font-family: 'Fira Code', 'Menlo', 'Monaco', 'Consolas', monospace;
+}
+
 @screen sm {
   .post {
-    @apply max-w-xl mx-auto;
     padding-top: calc(80px + 3rem);
+  }
+
+  .post-header {
+    @apply max-w-xl;
+  }
+
+  .text {
+    @apply max-w-xl mx-auto;
+  }
+
+  >>> code {
+    min-width: 36rem;
+  }
+
+  .code {
+    @apply max-w-xl mx-auto;
   }
 }
 </style>
