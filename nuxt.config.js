@@ -106,7 +106,7 @@ export default async () => {
 
     markdownit: {
       injected: true,
-      use: ['markdown-it-highlightjs'],
+      use: ['~/plugins/highlight.js'],
     },
 
     /*

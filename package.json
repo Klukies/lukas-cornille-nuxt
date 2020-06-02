@@ -32,7 +32,7 @@
     "apollo-client": "^2.6.10",
     "apollo-link-prismic": "^1.0.7",
     "graphql-tag": "^2.10.3",
-    "markdown-it-highlightjs": "^3.1.0",
+    "highlight.js": "^10.0.3",
     "nuxt": "latest",
     "nuxt-composition-api": "latest",
     "nuxt-lazy-load": "^1.2.4",
