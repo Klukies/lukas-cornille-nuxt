@@ -50,6 +50,14 @@ h1 {
   @apply text-2xl mb-1;
 }
 
+>>> h2 {
+  @apply text-2xl mb-2;
+}
+
+>>> ul {
+  @apply pl-4 list-disc mb-4;
+}
+
 .post-header {
   @apply block mb-8 mx-auto;
 }
@@ -67,7 +75,7 @@ span {
 }
 
 >>> code {
-  @apply rounded text-sm leading-8;
+  @apply rounded text-sm leading-8 mb-4 bg-gray-800 text-gray-300;
   font-family: 'Fira Code', 'Menlo', 'Monaco', 'Consolas', monospace;
 }
 
