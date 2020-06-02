@@ -1,5 +1,6 @@
 import { computed } from 'nuxt-composition-api';
-import { Post } from '../graphql/types';
+import prismicDOM from 'prismic-dom';
+import { Post, RichText } from '../graphql/types';
 
 enum MONTHS {
   'January',
@@ -26,11 +27,34 @@ const formatPublicationDate = (prismicPublicationDate: string, wpPublicationDate
     : parseDate(new Date(prismicPublicationDate));
 };
 
+const Elements = prismicDOM.RichText.Elements;
+
+const formatBody = (prismicElements?: RichText[]): RichText[][] => {
+  const mappedElements: RichText[][] = [[]];
+  let mappedElementIndex = 0;
+  let isCode = false;
+  prismicElements!.forEach((element) => {
+    if (
+      (element.type === Elements.preformatted && !isCode) ||
+      (element.type !== Elements.preformatted && isCode)
+    ) {
+      isCode = !isCode;
+      mappedElementIndex++;
+      mappedElements.push([]);
+    }
+
+    mappedElements[mappedElementIndex].push(element);
+  });
+
+  return mappedElements;
+};
+
 export const usePost = (post: Post) => {
   const formattedDate = computed(() =>
     formatPublicationDate(post.node._meta.firstPublicationDate, post.node.wppublicationdate),
   );
   const slug = computed(() => `/blog/${post.node._meta.uid}`);
+  const formattedBody = computed(() => formatBody(post.node.body));
 
-  return { formattedDate, slug };
+  return { formattedDate, slug, formattedBody };
 };

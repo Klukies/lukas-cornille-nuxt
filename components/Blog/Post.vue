@@ -7,18 +7,23 @@
         <span>{{ post.node.category }}</span>
       </div>
     </div>
-    <div class="post-body">
-      <PrismicRichText :field="post.node.body" />
+    <div v-if="post.node.body" class="post-body">
+      <Fragment v-for="(items, i) in formattedBody" :key="i">
+        <PrismicRichText v-if="items[0].type !== 'preformatted'" :field="items" />
+        <div v-for="(codeBlock, j) in items" v-else :key="j" v-html="$md.render(codeBlock.text)" />
+      </Fragment>
     </div>
   </article>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
+import { Fragment } from 'vue-fragment';
 import { Post } from '~/graphql/types';
 import { usePost } from '~/composables/usePost';
 
 export default defineComponent({
+  components: { Fragment },
   props: {
     post: {
       type: Object as () => Post,
@@ -27,9 +32,9 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { formattedDate, slug } = usePost(props.post);
+    const { formattedDate, formattedBody } = usePost(props.post);
 
-    return { props, formattedDate, slug };
+    return { props, formattedDate, formattedBody };
   },
 });
 </script>

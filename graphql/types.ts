@@ -7,7 +7,7 @@ interface Image {
   url: string;
 }
 
-interface RichText {
+export interface RichText {
   type: string;
   text: string;
 }
