@@ -1,3 +1,4 @@
+import * as path from 'path';
 import ApolloClient from 'apollo-client';
 import { PrismicLink } from 'apollo-link-prismic';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -115,6 +116,13 @@ export default async () => {
        ** You can extend webpack config here
        */
       extend: (config, ctx) => {
+        config.resolve.alias['@ant-design/icons/lib/dist$'] = path.resolve(
+          __dirname,
+          './assets/icons/index.js',
+        );
+
+        config.IgnorePlugin();
+
         // Run ESLint on save
         if (ctx.isDev && ctx.isClient) {
           config.module.rules.push({
