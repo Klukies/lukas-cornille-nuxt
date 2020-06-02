@@ -15,7 +15,9 @@ import { prismic } from '~/graphql/prismic';
 
 export default Vue.extend({
   components: { Post },
-  async asyncData({ params }) {
+  async asyncData({ params, payload }) {
+    if (payload) return { post: payload };
+
     const { data }: Posts = await prismic.query({
       query: GET_POST,
       variables: { slug: params.slug },
