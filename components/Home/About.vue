@@ -73,6 +73,10 @@ h2 {
   background-image: url('~assets/icons/check-background.svg?inline');
 }
 
+>>> a {
+  @apply text-orange-700 underline;
+}
+
 >>> .ant-tabs-tabpane:nth-of-type(even) .tab-content {
   @apply flex-row-reverse;
 }

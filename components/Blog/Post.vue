@@ -46,6 +46,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.post {
+  @apply pb-12;
+}
+
 h1 {
   @apply text-2xl mb-1;
 }
@@ -56,6 +60,10 @@ h1 {
 
 >>> ul {
   @apply pl-4 list-disc mb-4;
+}
+
+>>> a {
+  @apply text-orange-700 underline;
 }
 
 .post-header {

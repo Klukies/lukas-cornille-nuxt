@@ -39,6 +39,10 @@ export default Vue.extend({
 </script>
 
 <style>
+.block-img img {
+  margin: auto;
+}
+
 .hljs {
   display: block;
   overflow-x: auto;
