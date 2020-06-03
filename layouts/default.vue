@@ -3,7 +3,6 @@
     <Header
       :is-menu-active="isMenuActive"
       :is-blog-active="isBlogActive"
-      @openContactModal="openContactModal"
       @toggleMenu="toggleMenu"
     />
     <MobileMenu
@@ -35,9 +34,6 @@ export default Vue.extend({
     },
   },
   methods: {
-    openContactModal() {
-      console.log('opening');
-    },
     toggleMenu() {
       this.isMenuActive = !this.isMenuActive;
     },

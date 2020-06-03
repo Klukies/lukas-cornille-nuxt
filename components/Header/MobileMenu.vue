@@ -3,7 +3,7 @@
     <nav @click="$emit('click')">
       <nuxt-link to="/">Home</nuxt-link>
       <nuxt-link to="/blog" :class="{ 'nuxt-link-exact-active': isBlogActive }">Blog</nuxt-link>
-      <button>Let's talk</button>
+      <nuxt-link to="/contact">Let's talk</nuxt-link>
     </nav>
   </div>
 </template>

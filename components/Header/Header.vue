@@ -2,7 +2,7 @@
   <header>
     <Brand />
     <Hamburger :is-active="isMenuActive" @click="$emit('toggleMenu')" />
-    <Navigation :is-blog-active="isBlogActive" @openContactModal="$emit('openContactModal')" />
+    <Navigation :is-blog-active="isBlogActive" />
   </header>
 </template>
 
