@@ -1,6 +1,6 @@
 <template>
   <Button
-    label="Contact me"
+    label="Let's talk"
     :classes="['button-orange', 'button-outlined', 'button-swipe-left']"
     @click="$emit('openContactModal')"
   />
