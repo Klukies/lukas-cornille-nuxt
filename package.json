@@ -24,6 +24,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "latest",
     "@nuxtjs/prismic": "^1.2.1",
+    "@prismicio/vue": "^2.0.4",
     "@types/body-scroll-lock": "^2.6.1",
     "@types/prismic-dom": "^2.1.1",
     "ant-design-vue": "^1.6.1",
@@ -37,7 +38,6 @@
     "nuxt-svg-loader": "^1.2.0",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.7.1",
-    "prismic-vue": "^2.0.1",
     "v-scroll-lock": "^1.2.0",
     "vue-fragment": "^1.5.1"
   },
