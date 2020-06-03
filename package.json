@@ -58,7 +58,7 @@
     "highlight.js": "^10.0.3",
     "husky": "^4.0.0",
     "jest": "^24.1.0",
-    "lint-staged": "^10.2.7",
+    "lint-staged": "^10.2.8",
     "prettier": "^1.19.1",
     "stylelint": "^10.1.0",
     "ts-jest": "^25.0.0",
