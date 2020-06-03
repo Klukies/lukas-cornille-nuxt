@@ -1,0 +1,53 @@
+.bot-field {
+  @apply hidden;
+}
+
+form {
+  @apply p-3;
+  border-radius: 0.25rem;
+}
+
+form,
+input {
+  @apply bg-gray-800;
+}
+
+h2 {
+  @apply text-center text-2xl;
+}
+
+.name {
+  @apply flex items-start;
+}
+
+.name >>> .floating-label {
+  @apply w-1/2;
+}
+
+.message {
+  @apply px-1 pt-2 mb-4;
+}
+
+.message label {
+  @apply block mb-1 text-gray-500 text-sm;
+}
+
+.message textarea {
+  @apply w-full bg-gray-800 h-24 resize-none border-b border-solid border-gray-600;
+}
+
+.message textarea:focus {
+  @apply border-orange-700;
+}
+
+input[type='submit'] {
+  @apply py-1 px-4 bg-orange-700 font-bold rounded-full mx-auto block outline-none;
+}
+
+input[type='submit']:active {
+  background-color: #c05621;
+}
+
+.error {
+  @apply text-xs text-red-600;
+}

@@ -48,6 +48,10 @@ a:hover {
   @apply py-1 px-4 font-bold text-lg outline-none;
 }
 
+.link-button:hover {
+  @apply text-white;
+}
+
 .nuxt-link-exact-active.button-swipe-left {
   @apply text-white;
   box-shadow: inset 200px 0 0 0 #d36135;
