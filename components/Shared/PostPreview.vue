@@ -53,10 +53,10 @@ export default defineComponent({
 }
 
 span:not(:first-of-type) {
-  @apply border-l border-solid border-gray-600 ml-2 pl-2;
+  @apply border-l border-solid border-gray-500 ml-2 pl-2;
 }
 
 span {
-  @apply text-gray-600;
+  @apply text-gray-500;
 }
 </style>
