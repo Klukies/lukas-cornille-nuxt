@@ -97,12 +97,13 @@ export default async () => {
       '@nuxtjs/stylelint-module',
       // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
       '@nuxtjs/tailwindcss',
+      '@nuxtjs/markdownit',
       'nuxt-composition-api',
     ],
     /*
      ** Nuxt.js modules
      */
-    modules: ['nuxt-svg-loader', ['nuxt-lazy-load', { directiveOnly: true }], '@nuxtjs/markdownit'],
+    modules: ['nuxt-svg-loader', ['nuxt-lazy-load', { directiveOnly: true }]],
 
     markdownit: {
       injected: true,
