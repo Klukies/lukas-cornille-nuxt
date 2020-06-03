@@ -28,7 +28,7 @@ export default Vue.extend({
 <style scoped>
 .blog-preview {
   @apply bg-gray-900 z-20;
-  padding-top: calc(80px + 3rem);
+  padding-top: calc(80px + 1rem);
 }
 
 >>> .post-preview {

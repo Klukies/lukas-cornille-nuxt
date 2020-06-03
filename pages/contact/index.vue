@@ -22,3 +22,13 @@ export default defineComponent({
   setup() {},
 });
 </script>
+
+<style scoped>
+.contact {
+  padding-top: calc(80px + 1rem);
+}
+
+.contact h1 {
+  @apply text-4xl mb-6;
+}
+</style>

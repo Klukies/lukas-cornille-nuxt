@@ -39,6 +39,10 @@ export default Vue.extend({
 </script>
 
 <style>
+section {
+  padding-top: calc(80px + 1rem);
+}
+
 .block-img img {
   margin: auto;
 }
