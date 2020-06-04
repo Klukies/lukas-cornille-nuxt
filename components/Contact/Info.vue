@@ -1,7 +1,7 @@
 <template>
   <a :href="isPhone ? `tel:${info}` : `mailto:${info}`">
     <slot />
-    {{ info }}
+    <span>{{ info }}</span>
   </a>
 </template>
 
@@ -16,7 +16,6 @@ export default defineComponent({
     },
     isPhone: {
       type: Boolean,
-      required: true,
       default: false,
     },
   },
@@ -39,6 +38,10 @@ a:active {
 }
 
 svg {
-  @apply w-6 h-6 mr-4;
+  @apply w-6 h-6;
+}
+
+span {
+  @apply ml-4;
 }
 </style>

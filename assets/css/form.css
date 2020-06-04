@@ -47,11 +47,19 @@ h2 {
 }
 
 input[type='submit'] {
-  @apply py-1 px-4 bg-orange-700 font-bold rounded-full mx-auto block outline-none;
+  @apply py-1 px-4 bg-orange-700 font-bold rounded-full mx-auto block outline-none cursor-pointer;
 }
 
 input[type='submit']:active {
   background-color: #c05621;
+}
+
+.submit-success {
+  @apply bg-green-600 cursor-not-allowed !important;
+}
+
+.submit-error {
+  @apply bg-red-600 !important;
 }
 
 .error {

@@ -8,7 +8,7 @@
             <Info info="lukascornille@hotmail.com">
               <EmailLogo />
             </Info>
-            <Info info="+32499633841" :is-phone="true">
+            <Info info="+32499 63 38 41" :is-phone="true">
               <PhoneLogo />
             </Info>
           </div>

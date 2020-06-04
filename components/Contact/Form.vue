@@ -30,12 +30,18 @@
       <textarea v-model="form.message" name="message" />
       <span class="error">{{ errors.message }}</span>
     </div>
-    <input type="submit" value="Send Message" />
+    <input
+      type="submit"
+      :class="{ 'submit-success': formState === 'success', 'submit-error': formState === 'error' }"
+      :value="submitValue"
+      :disabled="formState === 'success'"
+    />
   </form>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive } from '@vue/composition-api';
+import { ref } from 'nuxt-composition-api';
 import FloatingLabel from './FloatingLabel.vue';
 
 export default defineComponent({
@@ -87,6 +93,14 @@ export default defineComponent({
       return true;
     };
 
+    enum FORMSTATES {
+      IN_PROGRESS = 'in-progress',
+      SUCCESS = 'success',
+      ERROR = 'error',
+    }
+    const formState = ref(FORMSTATES.IN_PROGRESS);
+    const submitValue = ref('Send Message');
+
     const handleSubmit = () => {
       if (!validate()) {
         return;
@@ -97,11 +111,17 @@ export default defineComponent({
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': 'contact', ...form }),
       })
-        .then(() => console.log('succesfully sent'))
-        .catch((e) => console.error(e));
+        .then(() => {
+          formState.value = FORMSTATES.SUCCESS;
+          submitValue.value = 'Successfully sent!';
+        })
+        .catch(() => {
+          formState.value = FORMSTATES.ERROR;
+          submitValue.value = 'Something went wrong!';
+        });
     };
 
-    return { form, errors, handleSubmit };
+    return { form, errors, handleSubmit, formState, submitValue };
   },
 });
 </script>
