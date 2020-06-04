@@ -1,11 +1,18 @@
 <template>
   <main>
     <section class="contact">
-      <h1>Let's talk</h1>
-      <div>
-        <Form />
-        <div>
-          <Info />
+      <div class="contact-info">
+        <h1>Let's talk</h1>
+        <div class="contact-body">
+          <div class="info">
+            <Info info="lukascornille@hotmail.com">
+              <EmailLogo />
+            </Info>
+            <Info info="+32499633841" :is-phone="true">
+              <PhoneLogo />
+            </Info>
+          </div>
+          <Form />
         </div>
       </div>
     </section>
@@ -14,11 +21,13 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import Info from '../../components/Contact/Info.vue';
-import Form from '../../components/Contact/Form.vue';
+import Info from '~/components/Contact/Info.vue';
+import Form from '~/components/Contact/Form.vue';
+import EmailLogo from '~/assets/icons/mail.svg';
+import PhoneLogo from '~/assets/icons/phone.svg';
 
 export default defineComponent({
-  components: { Form, Info },
+  components: { Form, Info, EmailLogo, PhoneLogo },
   setup() {},
 });
 </script>
@@ -30,5 +39,19 @@ export default defineComponent({
 
 .contact h1 {
   @apply text-4xl mb-6;
+}
+
+@screen sm {
+  .contact-info {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .contact-body {
+    @apply flex flex-row-reverse justify-center;
+  }
+
+  .info {
+    @apply flex-grow-0;
+  }
 }
 </style>
