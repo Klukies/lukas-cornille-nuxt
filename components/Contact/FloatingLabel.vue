@@ -33,7 +33,7 @@ export default defineComponent({
 
 <style scoped>
 input[type='text'] {
-  @apply w-full text-white h-8 py-5 transition-all ease-linear duration-300;
+  @apply w-full text-white h-8 py-5 transition-all ease-linear duration-300 rounded-none;
   height: 3.5rem;
   border: none;
   border-bottom: solid 1px #718096;

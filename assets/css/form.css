@@ -7,6 +7,12 @@ form {
   border-radius: 0.25rem;
 }
 
+@screen sm {
+  form {
+    @apply mr-4 flex-grow;
+  }
+}
+
 form,
 input {
   @apply bg-gray-800;
@@ -33,7 +39,7 @@ h2 {
 }
 
 .message textarea {
-  @apply w-full bg-gray-800 h-24 resize-none border-b border-solid border-gray-600;
+  @apply w-full bg-gray-800 h-24 resize-none border-b border-solid border-gray-600 rounded-none outline-none;
 }
 
 .message textarea:focus {
