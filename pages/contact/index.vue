@@ -34,6 +34,7 @@ export default defineComponent({
 
 <style scoped>
 .contact {
+  @apply mb-12;
   padding-top: calc(80px + 1rem);
 }
 

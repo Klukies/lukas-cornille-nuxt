@@ -88,10 +88,6 @@ span {
 }
 
 @screen sm {
-  .post {
-    padding-top: calc(80px + 3rem);
-  }
-
   .post-header {
     @apply max-w-xl;
   }
