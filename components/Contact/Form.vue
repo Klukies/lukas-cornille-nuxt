@@ -40,19 +40,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from '@vue/composition-api';
-import { ref } from 'nuxt-composition-api';
+import { defineComponent, reactive, computed } from '@vue/composition-api';
 import FloatingLabel from './FloatingLabel.vue';
+import { useForm, VALIDATION_RULES, FORM_STATES } from '~/composables/useForm';
 
 export default defineComponent({
   components: { FloatingLabel },
   setup() {
-    const encode = (data: Record<string, string>): string => {
-      return Object.keys(data)
-        .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-        .join('&');
-    };
-
     const form: Record<string, string> = reactive({
       firstName: '',
       lastName: '',
@@ -61,65 +55,25 @@ export default defineComponent({
       message: '',
     });
 
-    const errors: Record<string, string> = reactive({
-      firstName: '',
-      lastName: '',
-      email: '',
-      subject: '',
-      message: '',
+    const { errors, handleSubmit, formState } = useForm(form, '/', {
+      firstName: [VALIDATION_RULES.REQUIRED],
+      lastName: [VALIDATION_RULES.REQUIRED],
+      email: [VALIDATION_RULES.REQUIRED, VALIDATION_RULES.EMAIL],
+      subject: [VALIDATION_RULES.REQUIRED],
+      message: [VALIDATION_RULES.REQUIRED],
     });
 
-    const validate = (): boolean => {
-      let hasRequiredError = false;
-      Object.keys(form).forEach((key) => {
-        if (form[key] === '') {
-          errors[key] = 'This field is required';
-          hasRequiredError = true;
-        } else {
-          errors[key] = '';
-        }
-      });
-
-      if (hasRequiredError) {
-        return false;
+    const submitValue = computed(() => {
+      if (formState.value === FORM_STATES.SUCCESS) {
+        return 'Successfully sent!';
       }
 
-      const emailFormat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-      if (!form.email.match(emailFormat)) {
-        errors.email = 'This is not a valid email';
-        return false;
+      if (formState.value === FORM_STATES.ERROR) {
+        return 'Something went wrong!';
       }
 
-      return true;
-    };
-
-    enum FORMSTATES {
-      IN_PROGRESS = 'in-progress',
-      SUCCESS = 'success',
-      ERROR = 'error',
-    }
-    const formState = ref(FORMSTATES.IN_PROGRESS);
-    const submitValue = ref('Send Message');
-
-    const handleSubmit = () => {
-      if (!validate()) {
-        return;
-      }
-
-      fetch('/', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', ...form }),
-      })
-        .then(() => {
-          formState.value = FORMSTATES.SUCCESS;
-          submitValue.value = 'Successfully sent!';
-        })
-        .catch(() => {
-          formState.value = FORMSTATES.ERROR;
-          submitValue.value = 'Something went wrong!';
-        });
-    };
+      return 'Send Message';
+    });
 
     return { form, errors, handleSubmit, formState, submitValue };
   },
