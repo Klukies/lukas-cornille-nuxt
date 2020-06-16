@@ -29,6 +29,18 @@ import PhoneLogo from '~/assets/icons/phone.svg';
 export default defineComponent({
   components: { Form, Info, EmailLogo, PhoneLogo },
   setup() {},
+  head() {
+    return {
+      title: 'Contact',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Contact information and a contact form to get in touch with me',
+        },
+      ],
+    };
+  },
 });
 </script>
 

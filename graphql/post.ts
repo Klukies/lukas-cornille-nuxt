@@ -27,6 +27,7 @@ export const GET_POST = gql`
           title
           wppublicationdate
           category
+          summary
           body
           _meta {
             uid

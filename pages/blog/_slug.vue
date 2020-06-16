@@ -8,6 +8,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import prismicDom from 'prismic-dom';
 import Post from '../../components/Blog/Post.vue';
 import { GET_POST } from '../../graphql/post';
 import { Posts } from '../../graphql/types';
@@ -27,6 +28,16 @@ export default Vue.extend({
   },
   head() {
     return {
+      // @ts-ignore
+      title: this.post.node.title[0].text,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          // @ts-ignore
+          content: prismicDom.RichText.asText(this.post.node.summary),
+        },
+      ],
       link: [
         {
           rel: 'stylesheet',

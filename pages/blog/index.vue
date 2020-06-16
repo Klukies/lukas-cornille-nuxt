@@ -22,6 +22,18 @@ export default Vue.extend({
 
     return { posts: data.allPosts.edges };
   },
+  head() {
+    return {
+      title: 'Blog',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'An overview of my recent posts',
+        },
+      ],
+    };
+  },
 });
 </script>
 

@@ -24,6 +24,17 @@ export default Vue.extend({
 
     return { tabs: tabData.allAbout_tabs.edges, posts: postData.allPosts.edges.slice(0, 5) };
   },
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Information about me, my skills and a preview of my latest blog posts',
+        },
+      ],
+    };
+  },
 });
 </script>
 
