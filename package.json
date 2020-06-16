@@ -24,7 +24,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "latest",
     "@nuxtjs/prismic": "^1.2.1",
-    "@prismicio/vue": "^2.0.4",
+    "@prismicio/vue": "^2.0.5",
     "@types/body-scroll-lock": "^2.6.1",
     "@types/prismic-dom": "^2.1.1",
     "ant-design-vue": "^1.6.1",
@@ -54,15 +54,15 @@
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-prettier": "^3.1.2",
-    "highlight.js": "^10.0.3",
+    "eslint-plugin-prettier": "^3.1.4",
+    "highlight.js": "^10.1.0",
     "husky": "^4.0.0",
     "jest": "^24.1.0",
-    "lint-staged": "^10.2.8",
+    "lint-staged": "^10.2.10",
     "prettier": "^1.19.1",
     "stylelint": "^10.1.0",
     "ts-jest": "^25.0.0",
-    "vue-jest": "^4.0.0-0",
+    "vue-jest": "^4.0.0-beta.3",
     "vue-template-compiler": "^2.6.11"
   }
 }
