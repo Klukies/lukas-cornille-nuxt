@@ -17,6 +17,7 @@ const GET_POSTS = gql`
           title
           wppublicationdate
           category
+          summary
           body
           _meta {
             uid
