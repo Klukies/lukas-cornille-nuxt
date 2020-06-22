@@ -5,6 +5,7 @@ import Token from 'markdown-it/lib/token';
 
 const registerLanguages = () => {
   hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+  hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
   hljs.registerLanguage('php', require('highlight.js/lib/languages/php'));
   hljs.registerLanguage('powershell', require('highlight.js/lib/languages/powershell'));
   hljs.registerLanguage('html', require('highlight.js/lib/languages/xml'));
