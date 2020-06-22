@@ -26,6 +26,7 @@
     "@nuxtjs/prismic": "^1.2.1",
     "@prismicio/vue": "^2.0.5",
     "@types/body-scroll-lock": "^2.6.1",
+    "@types/highlightjs": "^9.12.0",
     "@types/prismic-dom": "^2.1.1",
     "ant-design-vue": "^1.6.1",
     "apollo-cache-inmemory": "^1.6.6",

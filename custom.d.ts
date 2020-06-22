@@ -21,3 +21,5 @@ declare module 'vue-fragment' {
   }
   export default VueFragment;
 }
+
+declare module 'highlight.js/lib/core';
