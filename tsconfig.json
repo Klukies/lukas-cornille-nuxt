@@ -8,6 +8,7 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
+    "resolveJsonModule": true,
     "noEmit": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
@@ -15,7 +16,7 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@types/node", "@nuxt/types"]
+    "types": ["@types/node", "@nuxt/types", "@types/jest"]
   },
   "exclude": ["node_modules", ".nuxt", "dist", "assets/icons/*"]
 }
