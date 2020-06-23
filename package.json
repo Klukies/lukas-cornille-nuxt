@@ -27,6 +27,7 @@
     "@prismicio/vue": "^2.0.5",
     "@types/body-scroll-lock": "^2.6.1",
     "@types/highlightjs": "^9.12.0",
+    "@types/jest": "^26.0.0",
     "@types/markdown-it": "^10.0.1",
     "@types/prismic-dom": "^2.1.1",
     "ant-design-vue": "^1.6.1",
@@ -39,12 +40,13 @@
     "nuxt-lazy-load": "^1.2.4",
     "nuxt-svg-loader": "^1.2.0",
     "prismic-dom": "^2.2.3",
-    "prismic-javascript": "^2.7.1",
+    "prismic-javascript": "^3.0.0",
     "v-scroll-lock": "^1.2.0",
     "vue-fragment": "^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
     "@nuxt/typescript-build": "latest",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
@@ -52,6 +54,7 @@
     "@nuxtjs/stylelint-module": "^3.1.0",
     "@nuxtjs/tailwindcss": "^1.0.0",
     "@vue/test-utils": "^1.0.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
     "eslint": "^6.1.0",
@@ -60,12 +63,12 @@
     "eslint-plugin-prettier": "^3.1.4",
     "highlight.js": "^10.1.1",
     "husky": "^4.0.0",
-    "jest": "^24.1.0",
+    "jest": "^25.5.4",
     "lint-staged": "^10.2.11",
     "prettier": "^1.19.1",
     "stylelint": "^10.1.0",
     "ts-jest": "^25.0.0",
-    "vue-jest": "^4.0.0-beta.3",
+    "vue-jest": "^3.0.4",
     "vue-template-compiler": "^2.6.11"
   }
 }
