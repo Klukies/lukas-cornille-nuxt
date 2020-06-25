@@ -29,7 +29,7 @@ export default Vue.extend({
 
 <style scoped>
 header {
-  @apply fixed flex py-4 pl-4 justify-between items-center bg-gray-900 fixed w-full z-50;
+  @apply fixed flex py-4 pl-4 justify-between items-center bg-gray-900 w-full z-50;
   padding-right: calc(100vw - 100%);
 }
 

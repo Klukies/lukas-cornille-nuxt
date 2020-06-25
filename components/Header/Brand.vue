@@ -1,19 +1,11 @@
 <template>
-  <nuxt-link to="/">
-    <span>&#60;/&#62;</span>
-    Lukas
-  </nuxt-link>
+  <nuxt-link to="/"><span>&#60;/&#62;</span>Lukas</nuxt-link>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({
-  components: {},
-  data() {
-    return {};
-  },
-});
+export default Vue.extend({});
 </script>
 
 <style scoped>
