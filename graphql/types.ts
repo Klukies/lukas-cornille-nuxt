@@ -10,6 +10,7 @@ interface Image {
 export interface RichText {
   type: string;
   text: string;
+  spans: [];
 }
 
 interface Title {

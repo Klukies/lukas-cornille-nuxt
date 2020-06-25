@@ -58,22 +58,21 @@ export const useForm = (
   // Using Vue.set() makes each error reactive and allows the component to track it
   Object.keys(form).forEach((key) => Vue.set(errors, key, ''));
 
-  const handleSubmit = (): void => {
+  const handleSubmit = async (): Promise<void> => {
     if (!validate(form, formValidationRules)) {
       return;
     }
 
-    fetch(endpoint, {
-      method: 'post',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...form }),
-    })
-      .then(() => {
-        formState.value = FORM_STATES.SUCCESS;
-      })
-      .catch(() => {
-        formState.value = FORM_STATES.ERROR;
+    try {
+      await fetch(endpoint, {
+        method: 'post',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...form }),
       });
+      formState.value = FORM_STATES.SUCCESS;
+    } catch (e) {
+      formState.value = FORM_STATES.ERROR;
+    }
   };
 
   return { errors, handleSubmit, formState };
