@@ -25,6 +25,8 @@ export default defineComponent({
     },
   },
 
+  // Currently just returning props in setup is seen as not covered code
+  // istanbul ignore next
   setup(props) {
     return { props };
   },
