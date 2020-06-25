@@ -22,6 +22,6 @@ a {
 }
 
 a span {
-  @apply flex text-center block leading-loose w-12 mr-2 text-2xl bg-orange-700 tracking-tighter;
+  @apply text-center block leading-loose w-12 mr-2 text-2xl bg-orange-700 tracking-tighter;
 }
 </style>
