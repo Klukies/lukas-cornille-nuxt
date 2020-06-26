@@ -2,7 +2,7 @@
 
 > My personal website made with Nuxt (Composition API and Options API), Tailwind, Prismic and TypeScript
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/18a2fa61-a634-4924-bf7d-1d1022cd571d/deploy-status)](https://app.netlify.com/sites/lukascornille/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/18a2fa61-a634-4924-bf7d-1d1022cd571d/deploy-status)](https://app.netlify.com/sites/lukascornille/deploys) ![Tests](https://github.com/LukasCornille/lukas-cornille-nuxt/workflows/Tests/badge.svg) [![codecov](https://codecov.io/gh/LukasCornille/lukas-cornille-nuxt/branch/master/graph/badge.svg)](https://codecov.io/gh/LukasCornille/lukas-cornille-nuxt)
 
 ## Build Setup
 
