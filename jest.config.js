@@ -11,6 +11,7 @@ module.exports = {
     '^.+\\.ts$': 'ts-jest',
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest',
+    '^.+\\.svg$': '<rootDir>/__mocks__/svg.js',
   },
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
   collectCoverage: true,
