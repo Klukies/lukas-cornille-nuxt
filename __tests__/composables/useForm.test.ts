@@ -50,6 +50,15 @@ describe('useForm', () => {
     expect(formState.value).toEqual(FORM_STATES.SUCCESS);
   });
 
+  it('will not validate if no validation rules where given', async () => {
+    fetchMock.mockResponse('');
+    const { errors, handleSubmit, formState } = useForm(mockedForm, '/', {});
+
+    await handleSubmit();
+    Object.keys(errors).forEach((key) => expect(errors[key]).toEqual(''));
+    expect(formState.value).toEqual(FORM_STATES.SUCCESS);
+  });
+
   it('can handle a Fetch API error', async () => {
     fetchMock.mockReject();
     const { handleSubmit, formState } = useForm(mockedForm, '/', {});
