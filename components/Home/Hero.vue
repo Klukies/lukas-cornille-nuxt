@@ -1,10 +1,7 @@
 <template>
   <section class="hero">
     <div class="hero-info">
-      <h1>
-        I'm
-        <span>Lukas</span> Cornille
-      </h1>
+      <h1>I'm <span>Lukas</span> Cornille</h1>
       <h2>Full Stack Developer</h2>
       <Socials />
     </div>
@@ -12,7 +9,6 @@
       <picture>
         <source
           srcset="https://images.prismic.io/lukas-cornille/1449d3da-8361-48ed-a011-521696688ccd_me.png?auto=format"
-          media="(min-width: 1024px)"
         />
         <img src="~/assets/images/blank.png" alt="me" />
       </picture>
@@ -23,13 +19,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Socials from '../Shared/Socials.vue';
+import Socials from './Socials.vue';
 
 export default Vue.extend({
   components: { Socials },
-  data() {
-    return {};
-  },
 });
 </script>
 

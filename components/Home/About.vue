@@ -8,7 +8,7 @@
             <img v-lazy-load :data-src="tab.node.image.url" :alt="tab.node.image.alt" />
           </div>
           <div class="tab-content-text">
-            <PrismicRichText :field="tab.node.title" />
+            <h3>{{ tab.node.title[0].text }}</h3>
             <PrismicRichText :field="tab.node.text" />
           </div>
         </div>
