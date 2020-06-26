@@ -15,9 +15,5 @@ module.exports = {
   },
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
   collectCoverage: true,
-  collectCoverageFrom: [
-    '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/**/*.vue',
-    '<rootDir>/composables/**/*.ts',
-  ],
+  collectCoverageFrom: ['<rootDir>/components/**/*.vue', '<rootDir>/composables/**/*.ts'],
 };
