@@ -67,7 +67,7 @@
     "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^10.2.11",
     "prettier": "^1.19.1",
-    "stylelint": "^10.1.0",
+    "stylelint": "^15.10.1",
     "ts-jest": "^25.0.0",
     "vue-jest": "^3.0.4",
     "vue-template-compiler": "^2.6.11"
